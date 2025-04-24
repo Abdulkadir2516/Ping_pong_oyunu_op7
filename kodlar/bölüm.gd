@@ -2,7 +2,6 @@ extends Node2D
 
 var atilangol = -2
 var yenilengol = -2
-
 func _ready():
 	$AcceptDialog.position = Vector2(1006,512)
 	$AcceptDialog.visible = false
@@ -35,14 +34,14 @@ func _physics_process(delta):
 	$"Rakip Oyuncu Skor".text = str(yenilengol)
 	$"Zamanlayıcının Metni".text = str(int($"Zamanlayıcı".time_left))
 	
-	if atilangol == 1:
+	if atilangol == 3:
 		print("Kazandınız")
 		$AcceptDialog.visible = true
 		$AcceptDialog.dialog_text = "Kazandınız"
 		_on_pause_button_pressed()
 
 	
-	if yenilengol == 1:
+	if yenilengol == 3:
 		print("Kaybettiniz")
 		$AcceptDialog.visible = true
 		$AcceptDialog.dialog_text = "Kaybettiniz"
@@ -58,9 +57,7 @@ func _on_zamanlayıcı_timeout():
 	$"Zamanlayıcının Metni".visible = false
 
 func _on_pause_button_pressed():
-	get_tree().paused = true
-	show()
+	$Top.topudurdur()
 
 func _on_close_button_pressed():
-	hide()
-	get_tree().paused = false
+	$Top.toputekrarbaslat()

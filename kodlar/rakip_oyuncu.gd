@@ -3,13 +3,33 @@ extends CharacterBody2D
 var hiz = 10
 
 var top
+var kontrol = false
 
 func _ready():
 	#top değişkenine ismi top olan node u atayacağız
 	top = get_parent().get_node("Top")
 	
 func _physics_process(delta):
-	move_and_collide(Vector2(0,rakibinyonunubelirle())*hiz)
+	velocity = Vector2.ZERO
+	
+	if Input.is_action_pressed("1"):
+		kontrol = true
+	
+	if Input.is_action_pressed("2"):
+		kontrol = false
+
+
+	if kontrol and Input.is_action_pressed("yukarı git"):
+		velocity.y = velocity.y - 1
+		move_and_collide(velocity * hiz)
+	if kontrol and Input.is_action_pressed("aşağı git"):
+		velocity.y = velocity.y + 1
+		move_and_collide(velocity * hiz)
+	
+	if !kontrol:
+		move_and_collide(Vector2(0,rakibinyonunubelirle())*hiz)
+
+	
 
 
 func rakibinyonunubelirle():
