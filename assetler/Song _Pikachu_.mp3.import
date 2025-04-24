@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cphu4fa3jilxb"
+path="res://.godot/imported/Song _Pikachu_.mp3-93fff47fe2260e01c1211d3cff97e177.mp3str"
+
+[deps]
+
+source_file="res://assetler/Song _Pikachu_.mp3"
+dest_files=["res://.godot/imported/Song _Pikachu_.mp3-93fff47fe2260e01c1211d3cff97e177.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

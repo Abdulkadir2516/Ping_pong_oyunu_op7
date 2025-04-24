@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bkmw2m0uwkqd8"]
+
+[ext_resource type="Texture2D" uid="uid://d1x8c0d6toy07" path="res://assetler/Ball.png" id="1_g60yh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_21at7"]
+radius = 16.1203
+
+[node name="Top" type="CharacterBody2D" groups=["topgrup"]]
+metadata/_edit_group_ = true
+
+[node name="Top" type="Sprite2D" parent="."]
+scale = Vector2(0.84375, 0.84375)
+texture = ExtResource("1_g60yh")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+scale = Vector2(0.84375, 0.84375)
+shape = SubResource("CircleShape2D_21at7")

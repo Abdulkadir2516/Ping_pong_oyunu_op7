@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5oru0wsolm51"]
+
+[ext_resource type="Texture2D" uid="uid://bjwmel56xljtr" path="res://assetler/Paddle.png" id="1_nlddj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eurlu"]
+size = Vector2(32, 122)
+
+[node name="rakip oyuncu" type="CharacterBody2D"]
+metadata/_edit_group_ = true
+
+[node name="raket" type="Sprite2D" parent="."]
+texture = ExtResource("1_nlddj")
+
+[node name="hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eurlu")

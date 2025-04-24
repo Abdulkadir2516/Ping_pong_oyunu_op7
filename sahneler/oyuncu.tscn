@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dt2p1sdfwm10c"]
+
+[ext_resource type="Script" uid="uid://dxksfjfcuoc08" path="res://kodlar/oyuncu.gd" id="1_a5qk8"]
+[ext_resource type="Texture2D" uid="uid://bjwmel56xljtr" path="res://assetler/Paddle.png" id="1_d4kcj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3drvr"]
+size = Vector2(31, 122)
+
+[node name="oyuncu" type="CharacterBody2D"]
+script = ExtResource("1_a5qk8")
+metadata/_edit_group_ = true
+
+[node name="raket" type="Sprite2D" parent="."]
+texture = ExtResource("1_d4kcj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_3drvr")

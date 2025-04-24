@@ -1,0 +1,111 @@
+[gd_scene load_steps=11 format=3 uid="uid://ddttv55jvt7cc"]
+
+[ext_resource type="PackedScene" uid="uid://dt2p1sdfwm10c" path="res://sahneler/oyuncu.tscn" id="1_jbgfu"]
+[ext_resource type="Script" uid="uid://bh2vajka0oybv" path="res://kodlar/bölüm.gd" id="1_keeyj"]
+[ext_resource type="PackedScene" uid="uid://bkmw2m0uwkqd8" path="res://sahneler/top.tscn" id="2_72bhm"]
+[ext_resource type="FontFile" uid="uid://dl5jwcr0gh5vm" path="res://Fontlar/FrontPageNeue.otf" id="2_r5mrv"]
+[ext_resource type="Script" uid="uid://b4acmc5tt0nh2" path="res://kodlar/top.gd" id="3_0nxaq"]
+[ext_resource type="PackedScene" uid="uid://c5oru0wsolm51" path="res://sahneler/rakip_oyuncu.tscn" id="4_a0j3c"]
+[ext_resource type="Script" uid="uid://g48bn406efod" path="res://kodlar/rakip_oyuncu.gd" id="5_1h7fg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_71fca"]
+size = Vector2(1926.13, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_is8ir"]
+size = Vector2(29, 1123)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ydu0"]
+size = Vector2(37, 1123)
+
+[node name="Bölüm" type="Node2D"]
+script = ExtResource("1_keeyj")
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+position = Vector2i(0, 36)
+visible = true
+dialog_autowrap = true
+
+[node name="Arkaplan Rengi" type="ColorRect" parent="."]
+offset_right = 1930.0
+offset_bottom = 1105.0
+color = Color(0, 0.0705882, 0.168627, 1)
+
+[node name="Orta Saha Çizgisi" type="ColorRect" parent="."]
+offset_left = 979.0
+offset_top = 1.0
+offset_right = 1037.0
+offset_bottom = 1084.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Oyuncu Skor" type="Label" parent="."]
+offset_left = 610.0
+offset_top = 2.0
+offset_right = 1398.0
+offset_bottom = 105.0
+theme_override_colors/font_color = Color(0.922052, 0.783133, 0.236407, 1)
+theme_override_fonts/font = ExtResource("2_r5mrv")
+theme_override_font_sizes/font_size = 75
+text = "OYUNCUNUN SKORU:"
+metadata/_edit_use_anchors_ = true
+
+[node name="Rakip Oyuncu Skor" type="Label" parent="."]
+offset_left = 1451.0
+offset_right = 2473.0
+offset_bottom = 103.0
+theme_override_colors/font_color = Color(0.921569, 0.784314, 0.235294, 1)
+theme_override_fonts/font = ExtResource("2_r5mrv")
+theme_override_font_sizes/font_size = 75
+text = "RAKİP OYUNCUNUN SKORU:"
+
+[node name="oyuncu" parent="." instance=ExtResource("1_jbgfu")]
+position = Vector2(45, 495)
+
+[node name="Üst Duvar" type="StaticBody2D" parent="."]
+
+[node name="Hitbox" type="CollisionShape2D" parent="Üst Duvar"]
+position = Vector2(958.938, -9)
+shape = SubResource("RectangleShape2D_71fca")
+
+[node name="Alt Duvar" type="StaticBody2D" parent="."]
+
+[node name="Hitbox" type="CollisionShape2D" parent="Alt Duvar"]
+position = Vector2(961.375, 1098.5)
+shape = SubResource("RectangleShape2D_71fca")
+
+[node name="Top" parent="." instance=ExtResource("2_72bhm")]
+position = Vector2(1006, 512)
+script = ExtResource("3_0nxaq")
+
+[node name="rakip oyuncu" parent="." instance=ExtResource("4_a0j3c")]
+position = Vector2(1845, 495)
+script = ExtResource("5_1h7fg")
+
+[node name="Sol Duvar" type="Area2D" parent="."]
+
+[node name="Hitbox" type="CollisionShape2D" parent="Sol Duvar"]
+position = Vector2(-6.5, 543.5)
+shape = SubResource("RectangleShape2D_is8ir")
+
+[node name="Sağ Duvar" type="Area2D" parent="."]
+
+[node name="Hitbox" type="CollisionShape2D" parent="Sağ Duvar"]
+position = Vector2(1936.5, 543.5)
+shape = SubResource("RectangleShape2D_2ydu0")
+
+[node name="Zamanlayıcı" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Zamanlayıcının Metni" type="Label" parent="."]
+offset_left = 997.0
+offset_top = 188.0
+offset_right = 1312.0
+offset_bottom = 267.0
+theme_override_colors/font_color = Color(0.921569, 0.784314, 0.235294, 1)
+theme_override_fonts/font = ExtResource("2_r5mrv")
+theme_override_font_sizes/font_size = 75
+text = "ZAMANLAYICI"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="Sol Duvar" to="." method="_on_sol_duvar_body_entered"]
+[connection signal="body_entered" from="Sağ Duvar" to="." method="_on_sağ_duvar_body_entered"]
+[connection signal="timeout" from="Zamanlayıcı" to="." method="_on_zamanlayıcı_timeout"]
