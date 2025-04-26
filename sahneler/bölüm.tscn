@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ddttv55jvt7cc"]
+[gd_scene load_steps=14 format=3 uid="uid://ddttv55jvt7cc"]
 
 [ext_resource type="PackedScene" uid="uid://dt2p1sdfwm10c" path="res://sahneler/oyuncu.tscn" id="1_jbgfu"]
 [ext_resource type="Script" uid="uid://bh2vajka0oybv" path="res://kodlar/bölüm.gd" id="1_keeyj"]
@@ -7,6 +7,9 @@
 [ext_resource type="Script" uid="uid://b4acmc5tt0nh2" path="res://kodlar/top.gd" id="3_0nxaq"]
 [ext_resource type="PackedScene" uid="uid://c5oru0wsolm51" path="res://sahneler/rakip_oyuncu.tscn" id="4_a0j3c"]
 [ext_resource type="Script" uid="uid://g48bn406efod" path="res://kodlar/rakip_oyuncu.gd" id="5_1h7fg"]
+[ext_resource type="Texture2D" uid="uid://bhuologe3sry6" path="res://assetler/1_oyuncu.png" id="5_f14j4"]
+[ext_resource type="Texture2D" uid="uid://cgjhl0gfxtpue" path="res://assetler/arkaplan.jpg" id="8_72j5b"]
+[ext_resource type="Texture2D" uid="uid://bvqm5oljogy2p" path="res://assetler/2_oyuncu.png" id="10_amcoa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_71fca"]
 size = Vector2(1926.13, 18)
@@ -26,15 +29,21 @@ visible = true
 dialog_autowrap = true
 
 [node name="Arkaplan Rengi" type="ColorRect" parent="."]
-offset_right = 1930.0
-offset_bottom = 1105.0
+offset_right = 1915.0
+offset_bottom = 1082.0
 color = Color(0, 0.0705882, 0.168627, 1)
+
+[node name="Arkaplan" type="Sprite2D" parent="."]
+position = Vector2(954, 540.25)
+scale = Vector2(1.70893, 0.962053)
+texture = ExtResource("8_72j5b")
 
 [node name="Orta Saha Çizgisi" type="ColorRect" parent="."]
 offset_left = 979.0
 offset_top = 1.0
 offset_right = 1037.0
 offset_bottom = 1084.0
+color = Color(1, 1, 1, 0)
 metadata/_edit_use_anchors_ = true
 
 [node name="Oyuncu Skor" type="Label" parent="."]
@@ -58,7 +67,12 @@ theme_override_font_sizes/font_size = 75
 text = "RAKİP OYUNCUNUN SKORU:"
 
 [node name="oyuncu" parent="." instance=ExtResource("1_jbgfu")]
-position = Vector2(45, 495)
+position = Vector2(107, 551)
+
+[node name="Sprite2D" type="Sprite2D" parent="oyuncu"]
+position = Vector2(-3.5, -1.00003)
+scale = Vector2(0.318965, 0.345206)
+texture = ExtResource("10_amcoa")
 
 [node name="Üst Duvar" type="StaticBody2D" parent="."]
 
@@ -79,6 +93,11 @@ script = ExtResource("3_0nxaq")
 [node name="rakip oyuncu" parent="." instance=ExtResource("4_a0j3c")]
 position = Vector2(1845, 495)
 script = ExtResource("5_1h7fg")
+
+[node name="Sprite2D" type="Sprite2D" parent="rakip oyuncu"]
+position = Vector2(0.648735, -0.500002)
+scale = Vector2(0.304289, 0.303704)
+texture = ExtResource("5_f14j4")
 
 [node name="Sol Duvar" type="Area2D" parent="."]
 
