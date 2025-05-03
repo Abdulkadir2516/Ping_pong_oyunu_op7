@@ -4,18 +4,28 @@ var hiz = 10
 
 var top
 var kontrol = false
-
+var buton
+var giris 
 func _ready():
 	#top değişkenine ismi top olan node u atayacağız
 	top = get_parent().get_node("Top")
+	giris = get_parent().get_node("giris")
+	buton = get_parent().get_node("giris").get_node("cift_kisilik")
+	giris.visible = false
 	
 func _physics_process(delta):
+	
+	
+	
 	velocity = Vector2.ZERO
 	
 	if Input.is_action_pressed("1"):
 		kontrol = true
 	
 	if Input.is_action_pressed("2"):
+		kontrol = false
+	
+	if buton.button_pressed == true:
 		kontrol = false
 
 

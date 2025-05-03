@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://ddttv55jvt7cc"]
+[gd_scene load_steps=15 format=3 uid="uid://ddttv55jvt7cc"]
 
 [ext_resource type="PackedScene" uid="uid://dt2p1sdfwm10c" path="res://sahneler/oyuncu.tscn" id="1_jbgfu"]
 [ext_resource type="Script" uid="uid://bh2vajka0oybv" path="res://kodlar/bölüm.gd" id="1_keeyj"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bhuologe3sry6" path="res://assetler/1_oyuncu.png" id="5_f14j4"]
 [ext_resource type="Texture2D" uid="uid://cgjhl0gfxtpue" path="res://assetler/arkaplan.jpg" id="8_72j5b"]
 [ext_resource type="Texture2D" uid="uid://bvqm5oljogy2p" path="res://assetler/2_oyuncu.png" id="10_amcoa"]
+[ext_resource type="PackedScene" uid="uid://b8backpfp5if0" path="res://sahneler/giris.tscn" id="11_amcoa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_71fca"]
 size = Vector2(1926.13, 18)
@@ -124,6 +125,8 @@ theme_override_fonts/font = ExtResource("2_r5mrv")
 theme_override_font_sizes/font_size = 75
 text = "ZAMANLAYICI"
 metadata/_edit_use_anchors_ = true
+
+[node name="giris" parent="." instance=ExtResource("11_amcoa")]
 
 [connection signal="body_entered" from="Sol Duvar" to="." method="_on_sol_duvar_body_entered"]
 [connection signal="body_entered" from="Sağ Duvar" to="." method="_on_sağ_duvar_body_entered"]
