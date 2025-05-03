@@ -36,14 +36,14 @@ func _physics_process(delta):
 	
 	if atilangol == 3:
 		print("Kazandınız")
-		$AcceptDialog.visible = true
+		#$AcceptDialog.visible = true
 		$AcceptDialog.dialog_text = "Kazandınız"
 		_on_pause_button_pressed()
 
 	
 	if yenilengol == 3:
 		print("Kaybettiniz")
-		$AcceptDialog.visible = true
+		#$AcceptDialog.visible = true
 		$AcceptDialog.dialog_text = "Kaybettiniz"
 		_on_pause_button_pressed()
 
