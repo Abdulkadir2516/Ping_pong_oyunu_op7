@@ -46,11 +46,6 @@ func _physics_process(delta):
 		#$AcceptDialog.visible = true
 		$AcceptDialog.dialog_text = "Kaybettiniz"
 		_on_pause_button_pressed()
-
-	if Input.is_action_pressed("devam et"):
-		_on_close_button_pressed()
-	if Input.is_action_pressed("durdur"):
-		_on_pause_button_pressed()
 	
 func _on_zamanlayıcı_timeout():
 	get_tree().call_group("topgrup","toputekrarbaslat")

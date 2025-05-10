@@ -23,10 +23,10 @@ func _physics_process(delta):
 	
 
 
-	if Global.check and Input.is_action_pressed("yukarı git"):
+	if Global.check and Input.is_action_pressed("up"):
 		velocity.y = velocity.y - 1
 		move_and_collide(velocity * hiz)
-	if Global.check and Input.is_action_pressed("aşağı git"):
+	if Global.check and Input.is_action_pressed("down"):
 		velocity.y = velocity.y + 1
 		move_and_collide(velocity * hiz)
 	

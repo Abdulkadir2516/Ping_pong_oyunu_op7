@@ -18,27 +18,42 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 426.0
-offset_top = 720.0
+offset_top = 615.0
 offset_right = 1524.0
-offset_bottom = 1029.0
+offset_bottom = 1068.0
 grow_horizontal = 0
 grow_vertical = 0
 color = Color(0, 0.0117647, 0.0352941, 1)
 
 [node name="tek_kisilik" type="Button" parent="."]
-offset_left = 576.0
-offset_top = 794.0
-offset_right = 988.0
-offset_bottom = 949.0
+offset_left = 578.0
+offset_top = 664.0
+offset_right = 990.0
+offset_bottom = 819.0
 text = "Tek kişilik"
 
 [node name="cift_kisilik" type="Button" parent="."]
-offset_left = 1014.0
-offset_top = 804.0
-offset_right = 1397.0
-offset_bottom = 936.0
+offset_left = 1023.0
+offset_top = 691.0
+offset_right = 1406.0
+offset_bottom = 823.0
 text = "Çift Kişilik
 "
 
+[node name="nasıl_oynanir" type="Button" parent="."]
+offset_left = 589.0
+offset_top = 849.0
+offset_right = 1011.0
+offset_bottom = 1005.0
+text = "Nasıl Oynanır"
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 1042.0
+offset_top = 862.0
+offset_right = 1404.0
+offset_bottom = 1025.0
+text = "Hakkımızda"
+
 [connection signal="pressed" from="tek_kisilik" to="." method="_on_tek_kisilik_pressed"]
 [connection signal="pressed" from="cift_kisilik" to="." method="_on_cift_kisilik_pressed"]
+[connection signal="pressed" from="nasıl_oynanir" to="." method="_on_nasıl_oynanir_pressed"]

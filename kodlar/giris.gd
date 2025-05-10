@@ -12,3 +12,7 @@ func _on_cift_kisilik_pressed() -> void:
 
 
 	
+
+
+func _on_nasıl_oynanir_pressed() -> void:
+	get_tree().change_scene_to_file("res://sahneler/nasıl_oynanır.tscn")

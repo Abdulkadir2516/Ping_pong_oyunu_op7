@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmhumjviovvam"]
+
+[ext_resource type="Texture2D" uid="uid://bjwmel56xljtr" path="res://assetler/Paddle.png" id="1_765f2"]
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(451.125, 189.25)
+scale = Vector2(29.0887, 3.16942)
+texture = ExtResource("1_765f2")
+
+[node name="geri" type="Button" parent="."]
+offset_left = -10.9708
+offset_top = -13.9615
+offset_right = -2.97075
+offset_bottom = -5.96153
