@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var hiz = 10
+
 func _ready():
 	#0 ile 50 arasında rastgele sayı oluşturma
 	#randi fonksiyonu rastgele sayı oluşturmak için kullanılır
