@@ -127,6 +127,7 @@ text = "ZAMANLAYICI"
 metadata/_edit_use_anchors_ = true
 
 [node name="giris" parent="." instance=ExtResource("11_amcoa")]
+visible = false
 
 [connection signal="body_entered" from="Sol Duvar" to="." method="_on_sol_duvar_body_entered"]
 [connection signal="body_entered" from="Sağ Duvar" to="." method="_on_sağ_duvar_body_entered"]
