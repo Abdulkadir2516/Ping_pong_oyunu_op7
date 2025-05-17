@@ -34,24 +34,24 @@ text = "Tek kişilik"
 
 [node name="cift_kisilik" type="Button" parent="."]
 offset_left = 1023.0
-offset_top = 691.0
-offset_right = 1406.0
+offset_top = 663.0
+offset_right = 1426.0
 offset_bottom = 823.0
 text = "Çift Kişilik
 "
 
 [node name="nasıl_oynanir" type="Button" parent="."]
-offset_left = 589.0
+offset_left = 583.0
 offset_top = 849.0
-offset_right = 1011.0
-offset_bottom = 1005.0
+offset_right = 993.0
+offset_bottom = 1011.0
 text = "Nasıl Oynanır"
 
 [node name="Button2" type="Button" parent="."]
-offset_left = 1042.0
-offset_top = 862.0
-offset_right = 1404.0
-offset_bottom = 1025.0
+offset_left = 1027.0
+offset_top = 843.0
+offset_right = 1420.0
+offset_bottom = 1006.0
 text = "Hakkımızda"
 
 [connection signal="pressed" from="tek_kisilik" to="." method="_on_tek_kisilik_pressed"]

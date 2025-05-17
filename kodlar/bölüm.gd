@@ -2,6 +2,9 @@ extends Node2D
 
 var atilangol = -2
 var yenilengol = -2
+
+
+
 func _ready():
 	$AcceptDialog.position = Vector2(1006,512)
 	$AcceptDialog.visible = false
