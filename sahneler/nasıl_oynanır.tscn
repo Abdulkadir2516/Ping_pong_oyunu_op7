@@ -23,47 +23,36 @@ theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 42
 text = "1. oyuncu kontrolleri"
 
-[node name="Label2" type="Label" parent="."]
+[node name="Label3" type="Label" parent="Label"]
 layout_mode = 0
-offset_left = 1085.0
-offset_top = 100.0
-offset_right = 1575.0
-offset_bottom = 192.0
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_font_sizes/font_size = 42
-text = "2. oyuncu kontrolleri"
-
-[node name="Label3" type="Label" parent="."]
-layout_mode = 0
-offset_left = 157.0
-offset_top = 233.0
-offset_right = 447.0
-offset_bottom = 284.0
+offset_top = 133.0
+offset_right = 290.0
+offset_bottom = 184.0
 theme_override_font_sizes/font_size = 30
 text = "Yukarı Gitme  : "
 
-[node name="Label4" type="Label" parent="."]
+[node name="Label4" type="Label" parent="Label"]
 layout_mode = 0
-offset_left = 157.0
-offset_top = 284.0
-offset_right = 447.0
-offset_bottom = 335.0
+offset_top = 184.0
+offset_right = 290.0
+offset_bottom = 235.0
 theme_override_font_sizes/font_size = 30
 text = "Aşağı Gitme    : "
 
-[node name="TextEdit" type="TextEdit" parent="."]
+[node name="TextEdit" type="TextEdit" parent="Label"]
 layout_mode = 0
-offset_left = 395.0
-offset_top = 233.0
-offset_right = 647.0
-offset_bottom = 284.0
+offset_left = 238.0
+offset_top = 133.0
+offset_right = 490.0
+offset_bottom = 184.0
 placeholder_text = "w"
 
-[node name="TextEdit2" type="TextEdit" parent="."]
-offset_left = 395.0
-offset_top = 284.0
-offset_right = 647.0
-offset_bottom = 335.0
+[node name="TextEdit2" type="TextEdit" parent="Label"]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 184.0
+offset_right = 490.0
+offset_bottom = 235.0
 placeholder_text = "s"
 
 [node name="Button" type="Button" parent="."]
@@ -74,5 +63,49 @@ offset_right = 552.0
 offset_bottom = 681.0
 text = "Geri Dön"
 
-[connection signal="gui_input" from="TextEdit" to="." method="_on_text_edit_gui_input"]
+[node name="Label2" type="Label" parent="."]
+offset_left = 935.0
+offset_top = 100.0
+offset_right = 1425.0
+offset_bottom = 192.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 42
+text = "2. oyuncu kontrolleri"
+
+[node name="Label3" type="Label" parent="Label2"]
+layout_mode = 0
+offset_top = 133.0
+offset_right = 290.0
+offset_bottom = 184.0
+theme_override_font_sizes/font_size = 30
+text = "Yukarı Gitme  : "
+
+[node name="Label4" type="Label" parent="Label2"]
+layout_mode = 0
+offset_top = 184.0
+offset_right = 290.0
+offset_bottom = 235.0
+theme_override_font_sizes/font_size = 30
+text = "Aşağı Gitme    : "
+
+[node name="TextEdit3" type="TextEdit" parent="Label2"]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 133.0
+offset_right = 490.0
+offset_bottom = 184.0
+placeholder_text = "up"
+
+[node name="TextEdit4" type="TextEdit" parent="Label2"]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 184.0
+offset_right = 490.0
+offset_bottom = 235.0
+placeholder_text = "down"
+
+[connection signal="gui_input" from="Label/TextEdit" to="." method="_on_text_edit_gui_input"]
+[connection signal="gui_input" from="Label/TextEdit2" to="." method="_on_text_edit_2_gui_input"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="gui_input" from="Label2/TextEdit3" to="." method="_on_text_edit_3_gui_input"]
+[connection signal="gui_input" from="Label2/TextEdit4" to="." method="_on_text_edit_4_gui_input"]
